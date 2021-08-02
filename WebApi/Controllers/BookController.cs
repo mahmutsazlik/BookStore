@@ -57,7 +57,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBooksQuery querry = new GetBooksQuery(_context);
+            GetBooksQuery querry = new GetBooksQuery(_context,_mapper);
             var result = querry.Handle();
             return Ok(result);
         }
@@ -72,7 +72,7 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetBookById(int id)
         {
-            GetBookDetailQuery query = new GetBookDetailQuery(_context);
+            GetBookDetailQuery query = new GetBookDetailQuery(_context,_mapper);
             try
             {
                 query.BookId = id;
