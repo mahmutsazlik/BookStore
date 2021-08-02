@@ -6,10 +6,10 @@ using WebApi.Common;
 
 namespace WebApi.BookOperations.GetBooks
 {
-    public class GetBooksQuerry
+    public class GetBooksQuery
     {
         private readonly BookStoreDbContext _dbContext;
-        public GetBooksQuerry(BookStoreDbContext dbContext)
+        public GetBooksQuery(BookStoreDbContext dbContext)
         {
             this._dbContext = dbContext;
         }

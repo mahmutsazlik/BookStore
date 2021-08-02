@@ -16,7 +16,7 @@ namespace WebApi.Controllers
         private readonly BookStoreDbContext _context;
         public BookController(BookStoreDbContext context)
         {
-            this._context=context;
+            this._context = context;
         }
 
         // private static List<Book> BookList = new List<Book>(){
@@ -48,20 +48,36 @@ namespace WebApi.Controllers
         //     var bookList = _context.Books.OrderBy(x => x.Id).ToList();
         //     return bookList;
         // }
-        
+
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBooksQuerry querry=new GetBooksQuerry(_context);
+            GetBooksQuery querry = new GetBooksQuery(_context);
             var result = querry.Handle();
             return Ok(result);
         }
 
+        // [HttpGet("{id}")]
+        // public Book GetBookById(int id)
+        // {
+        //     var book = _context.Books.Where(x => x.Id == id).SingleOrDefault();
+        //     return book;
+        // }
+
         [HttpGet("{id}")]
-        public Book GetBookById(int id)
+        public IActionResult GetBookById(int id)
         {
-            var book = _context.Books.Where(x => x.Id == id).SingleOrDefault();
-            return book;
+            GetBookDetailQuery query = new GetBookDetailQuery(_context);
+            try
+            {
+                query.BookId = id;
+                var book = query.Handle();
+                return Ok(book);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // [HttpPost]
@@ -78,7 +94,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            CreateBookCommand command=new CreateBookCommand(_context);
+            CreateBookCommand command = new CreateBookCommand(_context);
             try
             {
                 command.Model = newBook;
