@@ -27,3 +27,5 @@ C:\Calismalarim\patika.dev\BookStore\WebApi\obj\Debug\net6.0\WebApi.genruntimeco
 C:\Calismalarim\patika.dev\BookStore\WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Calismalarim\patika.dev\BookStore\WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Calismalarim\patika.dev\BookStore\WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Calismalarim\patika.dev\BookStore\WebApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Calismalarim\patika.dev\BookStore\WebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

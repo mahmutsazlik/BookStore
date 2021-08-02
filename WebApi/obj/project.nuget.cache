@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "A34EGyHEQVE/vqXp1hBVOr0fKFp4M+DEVg18vkOISOCGtYKzRaGYt9TyFVDRcwr9ZGPrvAwMj8GV7l+mz+sZMQ==",
+  "dgSpecHash": "gJmP3xmXDjZYoGzB28CX+KN4rcaWDNUiG2TKMEwyCpCCaPNz7hAD3id7dZlNPomAKyRDsX8gtBKJQVMQAoCZQg==",
   "success": true,
   "projectFilePath": "C:\\Calismalarim\\patika.dev\\BookStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mzsaz\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\mzsaz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\mzsaz\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\mzsaz\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0-preview.6.21352.1\\microsoft.entityframeworkcore.6.0.0-preview.6.21352.1.nupkg.sha512",
     "C:\\Users\\mzsaz\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0-preview.6.21352.1\\microsoft.entityframeworkcore.abstractions.6.0.0-preview.6.21352.1.nupkg.sha512",
     "C:\\Users\\mzsaz\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.0-preview.6.21352.1\\microsoft.entityframeworkcore.analyzers.6.0.0-preview.6.21352.1.nupkg.sha512",
@@ -26,6 +29,7 @@
     "C:\\Users\\mzsaz\\.nuget\\packages\\system.collections.immutable\\6.0.0-preview.6.21352.12\\system.collections.immutable.6.0.0-preview.6.21352.12.nupkg.sha512",
     "C:\\Users\\mzsaz\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0-preview.6.21352.12\\system.diagnostics.diagnosticsource.6.0.0-preview.6.21352.12.nupkg.sha512",
     "C:\\Users\\mzsaz\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\mzsaz\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\mzsaz\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0-preview.6.21352.12\\system.runtime.compilerservices.unsafe.6.0.0-preview.6.21352.12.nupkg.sha512"
   ],
   "logs": []
