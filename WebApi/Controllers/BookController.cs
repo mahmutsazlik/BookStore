@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.DeleteBook;
@@ -57,7 +59,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBooksQuery querry = new GetBooksQuery(_context,_mapper);
+            GetBooksQuery querry = new GetBooksQuery(_context, _mapper);
             var result = querry.Handle();
             return Ok(result);
         }
@@ -72,7 +74,7 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetBookById(int id)
         {
-            GetBookDetailQuery query = new GetBookDetailQuery(_context,_mapper);
+            GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
             try
             {
                 query.BookId = id;
@@ -99,10 +101,12 @@ namespace WebApi.Controllers
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            CreateBookCommand command = new CreateBookCommand(_context,_mapper);
+            CreateBookCommand command = new CreateBookCommand(_context, _mapper);
             try
             {
                 command.Model = newBook;
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                validator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
@@ -135,6 +139,8 @@ namespace WebApi.Controllers
             {
                 command.BookId = id;
                 command.Model = updatedBook;
+                UpdateBookCommandValidator validator=new UpdateBookCommandValidator();
+                validator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
@@ -160,11 +166,13 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
-            DeleteBookCommand command=new DeleteBookCommand(_context);
+            DeleteBookCommand command = new DeleteBookCommand(_context);
             try
             {
-                command.BookId=id;
-                command.Handle();                
+                command.BookId = id;
+                DeleteBookCommandValidator validator=new DeleteBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                command.Handle();
             }
             catch (Exception ex)
             {
