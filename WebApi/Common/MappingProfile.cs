@@ -1,8 +1,8 @@
 using AutoMapper;
-using WebApi.BookOperations.CreateBook;
-using WebApi.BookOperations.GetBooks;
+using WebApi.Application.BookOperations.Commands.CreateBook;
+using WebApi.Application.BookOperations.Queries.GetBooks;
 using WebApi.Models;
-using static WebApi.BookOperations.GetBooks.GetBookDetailQuery;
+using static WebApi.Application.BookOperations.Queries.GetBooks.GetBookDetailQuery;
 
 namespace WebApi.Common
 {

@@ -12,7 +12,7 @@ namespace WebApi.DbOperations
         {
             using (var context = new BookStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
             {
-                if (context.Books.Any())
+                if (context.Books.Any() && context.Genres.Any())
                 {
                     return;
                 }
@@ -40,6 +40,20 @@ namespace WebApi.DbOperations
                         GenreId = 3,
                         PageCount = 250,
                         PublishDate = new System.DateTime(1998, 06, 17)
+                    }
+                );
+                context.Genres.AddRange(
+                    new Genre()
+                    {
+                        Name = "Personal Growth"
+                    },
+                    new Genre()
+                    {
+                        Name = "Science Fiction"
+                    },
+                    new Genre()
+                    {
+                        Name = "Noval"
                     }
                 );
                 context.SaveChanges();

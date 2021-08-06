@@ -6,7 +6,7 @@ using WebApi.Common;
 using System;
 using AutoMapper;
 
-namespace WebApi.BookOperations.CreateBook
+namespace WebApi.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {
