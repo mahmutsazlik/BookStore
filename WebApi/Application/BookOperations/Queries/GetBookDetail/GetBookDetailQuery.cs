@@ -1,10 +1,9 @@
 using System.Linq;
 using WebApi.DbOperations;
-using WebApi.Common;
 using System;
 using AutoMapper;
 
-namespace WebApi.Application.BookOperations.Queries.GetBooks
+namespace WebApi.Application.BookOperations.Queries.GetBooksDetail
 {
     public class GetBookDetailQuery
     {
@@ -26,12 +25,12 @@ namespace WebApi.Application.BookOperations.Queries.GetBooks
             BookDetailViewModel bookViewModel = _mapper.Map<BookDetailViewModel>(book);
             return bookViewModel;
         }
-        public class BookDetailViewModel
-        {
-            public string Title { get; set; }
-            public int PageCount { get; set; }
-            public string PublishDate { get; set; }
-            public string Genre { get; set; }
-        }
+    }
+    public class BookDetailViewModel
+    {
+        public string Title { get; set; }
+        public int PageCount { get; set; }
+        public string PublishDate { get; set; }
+        public string Genre { get; set; }
     }
 }

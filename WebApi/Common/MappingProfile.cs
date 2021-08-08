@@ -4,7 +4,7 @@ using WebApi.Application.BookOperations.Queries.GetBooks;
 using WebApi.Application.GenreOperations.Commands;
 using WebApi.Application.GenreOperations.Queries;
 using WebApi.Models;
-using static WebApi.Application.BookOperations.Queries.GetBooks.GetBookDetailQuery;
+using WebApi.Application.BookOperations.Queries.GetBooksDetail;
 
 namespace WebApi.Common
 {
