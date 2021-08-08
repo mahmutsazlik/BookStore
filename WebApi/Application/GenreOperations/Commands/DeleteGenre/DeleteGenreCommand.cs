@@ -19,7 +19,8 @@ namespace WebApi.Application.GenreOperations.Commands
             {
                 throw new InvalidOperationException("Silinecek kitap türü bulunamadı.");
             }
-            _context.Genres.Remove(genre);
+            genre.IsActive = false;
+            //_context.Genres.Remove(genre);
             _context.SaveChanges();
         }
     }

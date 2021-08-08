@@ -17,12 +17,12 @@ namespace WebApi.Application.GenreOperations.Commands
 
         public void Handle()
         {
-            var genre = _context.Genres.SingleOrDefault(x => x.IsActive && x.Id == GenreId);
+            var genre = _context.Genres.SingleOrDefault(x => x.Id == GenreId);
             if (genre is null)
             {
                 throw new InvalidOperationException("Güncellenecek kitap türü bulunamadı.");
             }
-            if(_context.Genres.Any(x=>x.Name.ToLower() == Model.Name.ToLower() && x.Id!=GenreId))
+            if (_context.Genres.Any(x => x.Name.ToLower() == Model.Name.ToLower() && x.Id != GenreId))
             {
                 throw new InvalidOperationException("Kitap türü ismi benzersiz olmalıdır.");
             }

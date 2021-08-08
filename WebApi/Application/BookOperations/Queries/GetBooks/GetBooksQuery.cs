@@ -4,6 +4,7 @@ using WebApi.DbOperations;
 using WebApi.Models;
 using WebApi.Common;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Application.BookOperations.Queries.GetBooks
 {
@@ -18,7 +19,7 @@ namespace WebApi.Application.BookOperations.Queries.GetBooks
         }
         public List<BookViewModel> Handle()
         {
-            var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList();
+            var bookList = _dbContext.Books.Include(x => x.Genre).OrderBy(x => x.Id).ToList();
             List<BookViewModel> lst = _mapper.Map<List<BookViewModel>>(bookList);
             return lst;
         }

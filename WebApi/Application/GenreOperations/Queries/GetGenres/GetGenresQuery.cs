@@ -9,14 +9,14 @@ namespace WebApi.Application.GenreOperations.Queries
     {
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public GetGenresQuery(BookStoreDbContext context,IMapper mapper)
+        public GetGenresQuery(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
         public List<GenreViewModel> Handle()
         {
-            var genreList = _context.Genres.OrderBy(x=>x.Id).ToList();
+            var genreList = _context.Genres.Where(x => x.IsActive).OrderBy(x => x.Id).ToList();
             List<GenreViewModel> lst = _mapper.Map<List<GenreViewModel>>(genreList);
             return lst;
         }

@@ -14,14 +14,14 @@ namespace WebApi.Common
         {
             CreateMap<CreateBookModel, Book>();
             CreateMap<Book, BookViewModel>()
-                                            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => ((GenreEnum)src.GenreId).ToString()))
+                                            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name))
                                             .ForMember(dest => dest.PublishDate, opt => opt.MapFrom(src => src.PublishDate.Date.ToString("dd/MM/yyyy")));
             CreateMap<Book, BookDetailViewModel>()
-                                            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => ((GenreEnum)src.GenreId).ToString()))
+                                            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name))
                                             .ForMember(dest => dest.PublishDate, opt => opt.MapFrom(src => src.PublishDate.Date.ToString("dd/MM/yyyy")));
-            CreateMap<Genre,GenreViewModel>();
-            CreateMap<Genre,GenreDetailViewModel>();
-            CreateMap<CreateGenreModel,Genre>();
+            CreateMap<Genre, GenreViewModel>();
+            CreateMap<Genre, GenreDetailViewModel>();
+            CreateMap<CreateGenreModel, Genre>();
         }
     }
 }

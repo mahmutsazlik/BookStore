@@ -18,7 +18,7 @@ namespace WebApi.Application.GenreOperations.Commands
         }
         public void Handle()
         {
-            var genre = _context.Genres.SingleOrDefault(obj => obj.Name == Model.Name);
+            var genre = _context.Genres.SingleOrDefault(obj => obj.Name.ToLower() == Model.Name.ToLower());
             if (genre is not null)
             {
                 throw new InvalidOperationException("Kitap türü zaten kayıtlı.");
