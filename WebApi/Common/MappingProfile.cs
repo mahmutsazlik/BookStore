@@ -1,6 +1,7 @@
 using AutoMapper;
 using WebApi.Application.BookOperations.Commands.CreateBook;
 using WebApi.Application.BookOperations.Queries.GetBooks;
+using WebApi.Application.GenreOperations.Commands;
 using WebApi.Application.GenreOperations.Queries;
 using WebApi.Models;
 using static WebApi.Application.BookOperations.Queries.GetBooks.GetBookDetailQuery;
@@ -20,6 +21,7 @@ namespace WebApi.Common
                                             .ForMember(dest => dest.PublishDate, opt => opt.MapFrom(src => src.PublishDate.Date.ToString("dd/MM/yyyy")));
             CreateMap<Genre,GenreViewModel>();
             CreateMap<Genre,GenreDetailViewModel>();
+            CreateMap<CreateGenreModel,Genre>();
         }
     }
 }
