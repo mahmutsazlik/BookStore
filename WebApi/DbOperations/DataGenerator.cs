@@ -12,7 +12,7 @@ namespace WebApi.DbOperations
         {
             using (var context = new BookStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
             {
-                if (context.Books.Any() && context.Genres.Any())
+                if (context.Books.Any() && context.Genres.Any() && context.Authors.Any())
                 {
                     return;
                 }
@@ -54,6 +54,23 @@ namespace WebApi.DbOperations
                     new Genre()
                     {
                         Name = "Noval"
+                    }
+                );
+                context.Authors.AddRange(
+                    new Author(){
+                        FirstName="AuthorFN1",
+                        LastName="AuthorLN1",
+                        Birthday=new DateTime(1990,10,05)
+                    },
+                    new Author(){
+                        FirstName="AuthorFN2",
+                        LastName="AuthorLN2",
+                        Birthday=new DateTime(2000,06,18)
+                    },
+                    new Author(){
+                        FirstName="AuthorFN3",
+                        LastName="AuthorLN3",
+                        Birthday=new DateTime(1985,04,23)
                     }
                 );
                 context.SaveChanges();
