@@ -6,6 +6,7 @@ using WebApi.Application.GenreOperations.Queries;
 using WebApi.Models;
 using WebApi.Application.BookOperations.Queries.GetBooksDetail;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
+using WebApi.Application.AuthorOperations.Commands.CreateAuthor;
 
 namespace WebApi.Common
 {
@@ -29,6 +30,7 @@ namespace WebApi.Common
                                             .ForMember(dest => dest.Birthday, opt => opt.MapFrom(src => src.Birthday.Date.ToString("dd/MM/yyyy")));
             CreateMap<Author, AuthorDetailViewModel>()
                                             .ForMember(dest => dest.Birthday, opt => opt.MapFrom(src => src.Birthday.Date.ToString("dd/MM/yyyy")));
+            CreateMap<CreateAuthorModel, Author>();
         }
     }
 }

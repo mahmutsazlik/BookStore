@@ -54,7 +54,6 @@ namespace WebApi.Controllers
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
             UpdateBookCommand command = new UpdateBookCommand(_context);
-
             command.BookId = id;
             command.Model = updatedBook;
             UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
