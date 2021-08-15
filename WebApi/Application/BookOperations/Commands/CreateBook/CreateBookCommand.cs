@@ -36,5 +36,6 @@ namespace WebApi.Application.BookOperations.Commands.CreateBook
         public int GenreId { get; set; }
         public int PageCount { get; set; }
         public DateTime PublishDate { get; set; }
+        public int AuthorId { get; set; }
     }
 }
